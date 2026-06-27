@@ -1,0 +1,41 @@
+interface Payment{
+    void pay();
+}
+class CreditCardPayment implements Payment{
+    private int CardNumber;
+    CreditCardPayment(int CardNumber){
+        this.CardNumber=CardNumber;
+    }
+    public void setCardNumber(int CardNumber){
+        this.CardNumber=CardNumber;
+    }
+    public int getCardNumber(){
+        return CardNumber;
+    }
+    public void pay(){
+        System.out.println("Credit Card Payment is done");
+    }
+}
+class BkashPayment implements Payment{
+    private int phoneNumber;
+    BkashPayment(int phoneNumber){
+        this.phoneNumber=phoneNumber;
+    }
+    public void setPhoneNumber(int phoneNumber){
+        this.phoneNumber=phoneNumber;
+    }
+    public int getPhoneNumber(){
+        return phoneNumber;
+    }
+    public void pay(){
+        System.out.println("Bkash Playment Done");
+    }
+}
+public class Main {
+    public static void main(String[] args){
+        Payment p1=new CreditCardPayment(1111111);
+        p1.pay();
+        Payment p2=new BkashPayment(0170000);
+        p2.pay();
+    }
+}
