@@ -1,0 +1,45 @@
+interface Connectable{
+    void connect();
+}
+interface Playable{
+    void play();
+}
+class Smartv implements Connectable , Playable{
+    private String Brand;
+    private int ScreenSize;
+    Smartv(String Brand, int ScreenSize){
+        this.Brand=Brand;
+        this.ScreenSize=ScreenSize;
+    }
+    public void setBrand(String Brand){
+        this.Brand=Brand;
+    }
+
+    public void setScreenSize(int ScreenSize) {
+        this.ScreenSize=ScreenSize;
+    }
+
+    public String getBrand() {
+        return Brand;
+    }
+
+    public int getScreenSize() {
+        return ScreenSize;
+    }
+    public void connect(){
+        System.out.println("Connected");
+    }
+
+    @Override
+    public void play() {
+        System.out.println("Playing");
+    }
+}
+public class Main {
+    public static void main(String[] args){
+        Connectable c=new Smartv("Sony",88);
+        c.connect();
+        Playable c1=new Smartv("Sony",88);
+        c1.play();
+    }
+}
