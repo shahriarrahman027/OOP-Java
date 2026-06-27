@@ -1,0 +1,63 @@
+class Vehicle{
+    private int vehicleID;
+    private String brand;
+    Vehicle(int vehicleID,String brand){
+        this.vehicleID=vehicleID;
+        this.brand=brand;
+    }
+    public void setVehicleID(){
+        this.vehicleID=vehicleID;
+    }
+    public void setBrand(){
+        this.brand=brand;
+    }
+    public int getVehicleID(int vehicleID) {
+        return vehicleID;
+    }
+    public String getBrand(String brand){
+        return brand;
+    }
+    void displaydetails(){
+        System.out.println("Vechile is Hybrid");
+    }
+}
+class Car extends Vehicle{
+    private String fuelType;
+    Car(int vehicleID,String brand,String fuelType){
+        super(vehicleID,brand);
+        this.fuelType=fuelType;
+    }
+    public void setFuelType() {
+        this.fuelType = fuelType;
+    }
+    public String getFuelType(String fuelType){
+        return fuelType;
+    }
+    void displaydetails(){
+        System.out.println(getFuelType(fuelType));
+    }
+}
+class ElectricCar extends Car{
+    private String batteryCapacity;
+    ElectricCar(int vehicleID,String brand,String fuelType,String batteryCapacity){
+        super(vehicleID,brand,fuelType);
+        this.batteryCapacity=batteryCapacity;
+    }
+    public void setBatteryCapacity() {
+        this.batteryCapacity = batteryCapacity;
+    }
+    public String getBatteryCapacity(String batteryCapacity){
+        return batteryCapacity;
+    }
+    void displaydetails(){
+        System.out.println(getBatteryCapacity(batteryCapacity));
+    }
+}
+public class Main{
+    public static void main(String[] args){
+        Vehicle c1=new Car(200,"Toyota","Octane");
+        c1.displaydetails();
+        Car e1=new ElectricCar(222,"Tesla","EV","28");
+         e1.displaydetails();
+    }
+}
