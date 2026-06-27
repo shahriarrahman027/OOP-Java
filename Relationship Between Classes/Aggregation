@@ -1,0 +1,25 @@
+class Teacher{
+    String name;
+    Teacher(String name){
+        this.name=name;
+    }
+}
+class Department{
+    String deptName;
+    Teacher teacher;
+    Department(String deptName , Teacher teacher){
+        this.deptName=deptName;
+        this.teacher=teacher;
+    }
+    void display(){
+        System.out.println(deptName +" Department");
+        System.out.println("Teacher:"+ teacher.name);
+    }
+}
+public class Main {
+    public static void main(String[] args){
+        Teacher t=new Teacher("Shahriar");
+        Department d=new Department("CSE",t);
+        d.display();
+    }
+}
