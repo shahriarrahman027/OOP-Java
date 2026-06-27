@@ -1,0 +1,63 @@
+class Person {
+    private int id;
+    private String name;
+    Person(int id,String name){
+        this.id=id;
+        this.name=name;
+    }
+    public void setID(int id){
+        this.id=id;
+    }
+    public void setName(String name){
+        this.name=name;
+    }
+    public int getID(){
+        return id;
+    }
+    public String getName(){
+        return name;
+    }
+    void displayInfo(){
+        System.out.println("ID: "+getID()+" Name: "+getName() );
+    }
+}
+class Student extends Person{
+    private double cgpa;
+    Student(int id,String name,double cgpa){
+        super(id,name);
+        this.cgpa=cgpa;
+    }
+    public void setCGPA(int cgpa){
+        this.cgpa=cgpa;
+    }
+    public double getCgpa(){
+        return cgpa;
+    }
+    void displayInfo(){
+        System.out.println("ID: "+getID()+" Name: "+getName()+" CGPA: "+getCgpa());
+    }
+}
+class Teacher extends Person{
+    private int salary;
+    Teacher(int id,String name,int salary){
+        super(id,name);
+        this.salary=salary;
+    }
+    public void setSalary(int salary){
+        this.salary=salary;
+    }
+    public int getSalary(){
+        return salary;
+    }
+    void displayInfo(){
+        System.out.println("Id: "+getID()+" Name: "+getName()+" Salary: "+getSalary());
+    }
+}
+public class Main{
+    public static void main(String[] args){
+        Person s=new Student(25115027,"Shahriar",3.7);
+        s.displayInfo();
+        Person t=new Teacher(222111444,"Rahman",100000);
+        t.displayInfo();
+    }
+}
