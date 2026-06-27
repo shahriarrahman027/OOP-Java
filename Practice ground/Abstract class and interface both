@@ -1,0 +1,58 @@
+abstract class Content{
+    private String name;
+    Content(String name){
+        this.name=name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getName() {
+        return name;
+    }
+    abstract void play();
+}
+interface Downloadable{
+    void download();
+}
+class Movie extends Content implements Downloadable {
+    Movie(String name){
+        super(name);
+    }
+    @Override
+    public void download() {
+        System.out.println(getName()+" is downloading");
+    }
+    public void play(){
+        System.out.println(getName()+"is playing");
+    }
+}
+class Series extends Content implements Downloadable{
+    Series(String name){
+        super(name);
+    }
+    @Override
+    public void download() {
+        System.out.println(getName()+" is downloading");
+    }
+    public void play(){
+        System.out.println(getName()+" is playing");
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+
+        Content c1 = new Movie("Singham");
+        Content c2 = new Series("GOT");
+
+        c1.play();
+        c2.play();
+
+        Downloadable d1 = new Movie("Singham");
+        Downloadable d2 = new Series("GOT");
+
+        d1.download();
+        d2.download();
+    }
+}
